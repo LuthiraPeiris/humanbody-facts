@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Human Body Facts</title>
+    <style>
+        :root {
+            --background-color: #c9c9c9;
+            --text-color: #333;
+            --button-bg-color: #007bff;
+            --button-text-color: #000000;
+            --container-bg-color: #ffffff;
+            --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+            background-image: url('background-pattern.png'); /* Example background image */
+            background-size: cover;
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .fact-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--container-bg-color);
+            box-shadow: var(--box-shadow);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .fact-container:hover {
+            transform: scale(1.02);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            background-color: darken(var(--button-bg-color), 10%);
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #333;
+                --text-color: #f0f8ff;
+                --container-bg-color: #444;
+                --button-bg-color: #0056b3;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fact-container">
+        <h1>Fun Facts about Human Body</h1>
+        <p id="fact"></p>
+        <button onclick="showRandomFact()">Show Another Fact</button>
+    </div>
+
+    <script>
+        const spaceFacts = [
+            "Unique Tongue Print: Just like fingerprints, every person has a unique tongue print.",
+            "Super Strong Bones: Human bones are about five times stronger than steel of the same density.",
+            "Fast Messages: Nerve impulses travel to and from the brain at speeds of up to 250 miles per hour (402 km/h).",
+            "Sweat Production: The body has about 2-4 million sweat glands. On average, a person can sweat up to 2-4 liters per hour during intense activity.",
+            "Brain Power: The brain can generate about 23 watts of power, enough to light a small lightbulb.",
+            "Lifelong Taste Buds: Taste buds regenerate approximately every 10 days, ensuring fresh sensory cells for your taste perception.",
+            "Invisible Glow: Humans emit a small amount of light that’s invisible to the human eye, called bioluminescence.",
+            "Changing Height: You’re about 1 cm taller in the morning because the cartilage in your spine compresses during the day.",
+            "Baby's Bones: Babies are born with around 300 bones, which fuse to become 206 bones in adulthood.",
+            "Heart Marvel: Your heart beats over 100,000 times a day, pumping around 2,000 gallons of blood!"
+        ];
+
+        function showRandomFact() {
+            const randomIndex = Math.floor(Math.random() * spaceFacts.length);
+            document.getElementById('fact').innerText = spaceFacts[randomIndex];
+        }
+
+        // Show a fact when the page loads
+        showRandomFact();
+    </script>
+</body>
+</html>
